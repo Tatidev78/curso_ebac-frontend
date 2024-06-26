@@ -1,1 +1,1 @@
-# cuso_ebac-frontend
+# curso_ebac-frontend
