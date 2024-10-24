@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="total">
+        <header>
+            <div class="title-container">
+                <img src="./girl.png" alt="menina com lapis na mao">
+                <h1>Lista de Tarefas</h1>
+            </div>
+        </header>
+        <div class="container">
+            <form id="task-form"> 
+                <input type="text" name="cadastro-tarefa" id="cadastro-tarefa" placeholder="Adicionar nova tarefa" >
+                <button type="submit" id="botao">Adicionar itens</button>
+            </form>
+        </div>
+        <main>
+            <ul id="task-list">
+    
+            </ul>
+        </main>
+    </div>
+<script src="./index.js"></script>
+    
+</body>
+</html>
