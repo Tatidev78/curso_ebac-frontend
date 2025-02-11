@@ -1,0 +1,10 @@
+body {
+  font-family: "Arial", sans-serif;
+  color: #333;
+}
+body .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+/*# sourceMappingURL=maps/main.css.map */
