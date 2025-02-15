@@ -76,9 +76,10 @@ img {
     
 .products {
     #display-flex();
-    margin-left: 40px;
-    gap: 30px;
+    flex-wrap:wrap;
     justify-content: center;
+    gap: 30px;
+    padding: 0;
 
     &-item {
         list-style: none;
@@ -141,27 +142,14 @@ footer {
 }
 
 @media @breakpointMobile{
-    max-width: 50%;
-    
-    .products{
-        display: flex;
-      
-        margin: 0 auto 20px;
-        width: 100%;
-        padding: 0;
-
-
-        img{
-            width:200px; 
-            height: 200px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
+       
+    .products-item{
+        flex: 1 1 100%;
     }
-    
 }
 
 @media @breakpointTablet{
-    max-width: 80%;
+    .products-item{
+        flex: 1 1 calc(50%-30px);
+    }
 }
