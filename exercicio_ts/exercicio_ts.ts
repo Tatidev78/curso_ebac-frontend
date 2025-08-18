@@ -7,4 +7,4 @@ function cumprimentar(nome: string) : string{
 }
 
 console.log(multiplicar(11,78));
-console.log(cumprimentar("Tatiana"));
+console.log(cumprimentar("Tatiana, tudo bem?"));
