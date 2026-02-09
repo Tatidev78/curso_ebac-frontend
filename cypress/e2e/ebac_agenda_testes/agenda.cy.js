@@ -4,23 +4,36 @@ describe('visitar site', () => {
   beforeEach(() => {
     cy.visit('https://ebac-agenda-contatos-tan.vercel.app/')
   })
+
   it('deve adicionar um contato', () => {
-    cy.get('input[placeholder="Nome"]').type('MARIA')
-    cy.get('input[placeholder="E-mail"]').type('maria@email.com')
-    cy.get('input[placeholder="Telefone"]').type('11999999999')
+    const nome = 'MARIA'
+    const email = 'maria@email.com'
+    const telefone = '11999999999'
+
+    cy.get('input[placeholder="Nome"]').type(nome)
+    cy.get('input[placeholder="E-mail"]').type(email)
+    cy.get('input[placeholder="Telefone"]').type(telefone)
     cy.get('button[type="submit"]').click()
 
-    cy.screenshot('contato-adicionado') 
+    cy.contains(nome).should('be.visible')
+    cy.screenshot('contato-adicionado')
+  })
 
-    })
+  it('deve alterar um contato existente', () => {
+    const nomeAlterado = 'MARIA DA SILVA'
 
-    it('deve alterar um contato existente', () =>{
-      cy.get('.edit').first().click()
-      cy.get('input[placeholder="Nome"]').clear().type('MARIA DA SILVA')
-      cy.get('button[type="submit"]').click()
-    })
+    cy.get('.edit').first().click()
+    cy.get('input[placeholder="Nome"]').clear().type(nomeAlterado)
+    cy.get('button[type="submit"]').click()
 
-    it('deve excluir um contato', () => {
-      cy.get('.delete').first().click()
-      })
+    cy.contains(nomeAlterado).should('be.visible')
+     cy.screenshot('contato-alterado')
+  })
+
+  it('deve excluir um contato', () => {
+    cy.get('.delete').first().click()
+
+    cy.contains('MARIA DA SILVA').should('not.exist')
+     cy.screenshot('contato-excluido')
+  })
 })
